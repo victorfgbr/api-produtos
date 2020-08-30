@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "88d139be-c8f9-4be9-a2f4-6452a44f7a45",
+		"name": "api-produtos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "apiprodutos",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "apiprodutos",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/oauth/token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/produtos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detalhar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/produtos/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"produtos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Headset Razer\",\r\n  \"quantidade\": 7,\r\n  \"valor\": 439.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/produtos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "alterar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Headset Razer\",\r\n  \"quantidade\": 7,\r\n  \"valor\": 439.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/produtos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearer_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Headset Razer\",\r\n  \"quantidade\": 7,\r\n  \"valor\": 439.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/produtos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
